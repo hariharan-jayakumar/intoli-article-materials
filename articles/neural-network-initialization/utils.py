@@ -115,7 +115,7 @@ def get_activations(model, x, mode=0.0):
     """Extract activations with given model and input vector x."""
     outputs = [layer.output for layer in model.layers]
     activations = K.function([model.input], outputs)
-    output_elts = activations([x, mode])
+    output_elts = activations((x, mode))
     return output_elts
 
 
